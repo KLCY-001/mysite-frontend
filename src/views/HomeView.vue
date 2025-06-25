@@ -41,17 +41,19 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import axios from '@/api/axios'  // 引入你封装好的 axios
+import axios from 'axios'
 
-const posts = ref([])
+interface Post {
+  id: number
+  title: string
+  content?: string
+}
+
+const posts = ref<Post[]>([])
 
 onMounted(async () => {
-  try {
-    const res = await axios.get('/api/posts/')
-    posts.value = res.data
-  } catch (err) {
-    console.error('获取文章失败:', err)
-  }
+  const res = await axios.get('https://kclyworkspace.onrender.com/api/posts/')
+  posts.value = res.data
 })
 </script>
 
