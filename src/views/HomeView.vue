@@ -41,13 +41,17 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import axios from 'axios'
+import axios from '@/api/axios'  // 引入你封装好的 axios
 
 const posts = ref([])
 
 onMounted(async () => {
-  const res = await axios.get('http://127.0.0.1:8000/api/posts/')
-  posts.value = res.data
+  try {
+    const res = await axios.get('/api/posts/')
+    posts.value = res.data
+  } catch (err) {
+    console.error('获取文章失败:', err)
+  }
 })
 </script>
 
