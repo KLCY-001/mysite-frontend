@@ -41,7 +41,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import axios from 'axios'
+import axios from '@/api/axios'
 
 interface Post {
   id: number
@@ -52,7 +52,7 @@ interface Post {
 const posts = ref<Post[]>([])
 
 onMounted(async () => {
-  const res = await axios.get('https://kclyworkspace.onrender.com/api/posts/')
+  const res = await axios.get('/api/posts/')
   posts.value = res.data
 })
 </script>

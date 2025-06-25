@@ -35,7 +35,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import axios from 'axios'
+import axios from '@/api/axios'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()  // ✅ 初始化路由
@@ -45,7 +45,7 @@ const slug = ref('')
 const content = ref('')
 
 const submitPost = async () => {
-  await axios.post('http://127.0.0.1:8000/api/posts/', {
+  await axios.post('/api/posts/', {
     title: title.value,
     slug: slug.value,
     content: content.value,

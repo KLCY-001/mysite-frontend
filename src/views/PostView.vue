@@ -8,14 +8,14 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
-import axios from 'axios'
+import axios from '@/api/axios'
 
 const post = ref<any>(null)
 const route = useRoute()
 
 onMounted(async () => {
   const id = route.params.id
-  const res = await axios.get(`http://127.0.0.1:8000/api/posts/${id}/`)
+  const res = await axios.get(`/api/posts/${id}/`)
   post.value = res.data
 })
 </script>
