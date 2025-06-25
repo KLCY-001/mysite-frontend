@@ -23,5 +23,7 @@ export default defineConfig({
         target: 'https://kclyworkspace.onrender.com',
         changeOrigin: true,
         secure: false,
-  },
+        },
+    }
+  }
 })

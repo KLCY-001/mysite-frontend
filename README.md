@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+# mysite-frontend
+=======
+>>>>>>> fix: vite.config.ts build syntax error
 # mysite-frontend
 
 This template should help get you started developing with Vue 3 in Vite.
@@ -62,3 +68,7 @@ npm run test:e2e -- --debug
 ```sh
 npm run lint
 ```
+<<<<<<< HEAD
+=======
+>>>>>>> initial commit
+>>>>>>> fix: vite.config.ts build syntax error
